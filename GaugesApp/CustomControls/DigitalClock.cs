@@ -8,23 +8,21 @@ using System.Windows;
 namespace GaugesApp.CustomControls
 {
     [TemplatePart(Name = "PART_Colon", Type = typeof(UIElement))]
-
     public class DigitalClock : Clock
     {
         private UIElement colon;
 
-        public static readonly DependencyProperty ColonBlinkProperty =
-            DependencyProperty.Register("ColonBlink", typeof(bool), typeof(DigitalClock), new PropertyMetadata(true));
-
-        public DigitalClock()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(DigitalClock), new FrameworkPropertyMetadata(typeof(DigitalClock)));
-        }
+        public static readonly DependencyProperty ColonBlinkProperty = DependencyProperty.Register("ColonBlink", typeof(bool), typeof(DigitalClock), new PropertyMetadata(true));
 
         public bool ColonBlink
         {
             get { return (bool)GetValue(ColonBlinkProperty); }
             set { SetValue(ColonBlinkProperty, value); }
+        }
+
+        static DigitalClock()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(DigitalClock), new FrameworkPropertyMetadata(typeof(DigitalClock)));
         }
 
         public override void OnApplyTemplate()
@@ -40,13 +38,14 @@ namespace GaugesApp.CustomControls
             {
                 if (ColonBlink && !ShowSeconds)
                 {
-                    colon.Visibility = colon.IsVisible ? Visibility.Visible : Visibility.Hidden;
+                    colon.Visibility = colon.IsVisible ? Visibility.Hidden : Visibility.Visible;
                 }
                 else
                 {
                     colon.Visibility = Visibility.Visible;
                 }
             }
+
             base.OnTimeChanged(newTime);
         }
     }

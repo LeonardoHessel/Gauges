@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace GaugesApp.CustomControls
@@ -13,17 +12,27 @@ namespace GaugesApp.CustomControls
     [TemplateVisualState(Name = "Day", GroupName = "TimeStates")]
     [TemplateVisualState(Name = "Night", GroupName = "TimeStates")]
     [TemplateVisualState(Name = "Christmas", GroupName = "TimeStates")]
-
     public class Clock : Control
     {
         public static readonly DependencyProperty TimeProperty =
-            DependencyProperty.Register("MyProperty", typeof(DateTime), typeof(Clock), new PropertyMetadata(DateTime.Now));
-
+            DependencyProperty.Register("Time", typeof(DateTime), typeof(Clock), 
+                new PropertyMetadata(DateTime.Now, TimePropertyChanged));
+        
         public static DependencyProperty ShowSecondsProperty = 
-            DependencyProperty.Register("ShowSeconds", typeof(bool), typeof(Clock), new PropertyMetadata(true));
+            DependencyProperty.Register("ShowSeconds", typeof(bool), typeof(Clock), 
+                new PropertyMetadata(true));
         
         public static RoutedEvent TimeChangedEvent = 
             EventManager.RegisterRoutedEvent("TimeChanged", RoutingStrategy.Bubble, typeof(RoutedPropertyChangedEventHandler<DateTime>), typeof(Clock));
+
+        private static void TimePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is Clock)
+            {
+                Clock clock = (Clock)d;
+                clock.RaiseEvent(new RoutedPropertyChangedEventArgs<DateTime>((DateTime)e.OldValue, (DateTime)e.NewValue, TimeChangedEvent));
+            }
+        }
 
         public DateTime Time
         {
@@ -58,7 +67,6 @@ namespace GaugesApp.CustomControls
         protected virtual void OnTimeChanged(DateTime newTime)
         {
             UpdateTimeState(newTime);
-            RaiseEvent(new RoutedPropertyChangedEventArgs<DateTime>(Time, newTime, TimeChangedEvent));
             Time = newTime;
         }
 
@@ -79,11 +87,6 @@ namespace GaugesApp.CustomControls
                     VisualStateManager.GoToState(this, "Night", false);
                 }
             }
-        }
-
-        public string HourInTime()
-        {
-            return Time.Hour.ToString();
         }
     }
 }

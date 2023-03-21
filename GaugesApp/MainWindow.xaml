@@ -9,11 +9,13 @@
 
     mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <StackPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
 
-        <custom:AnalogClock/>
-        <custom:DigitalClock/>
-        <!--<TextBlock x:Name="tbTime" Text="00:00:00" Margin="10" FontSize="50"
-                   HorizontalAlignment="Center"/>-->
-    </StackPanel>
+        <custom:AnalogClock Grid.Row="0"/>
+        <custom:DigitalClock ShowSeconds="False" ColonBlink="False" Grid.Row="1" Margin="0 10 0 0" FontSize="36" HorizontalAlignment="Center"/>
+    </Grid>
 </Window>
