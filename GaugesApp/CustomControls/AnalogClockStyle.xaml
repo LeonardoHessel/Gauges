@@ -60,7 +60,7 @@
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        
+
                         <Ellipse x:Name="PART_Border" Stroke="Black" StrokeThickness="1" Width="210" Height="210">
                             <Ellipse.Fill>
                                 <SolidColorBrush x:Name="ClockFill" Color="White"/>

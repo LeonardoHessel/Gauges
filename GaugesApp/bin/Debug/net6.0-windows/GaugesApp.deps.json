@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "GaugesApp/1.0.0": {
+        "dependencies": {
+          "GaugesLib": "1.0.0"
+        },
         "runtime": {
           "GaugesApp.dll": {}
+        }
+      },
+      "GaugesLib/1.0.0": {
+        "runtime": {
+          "GaugesLib.dll": {}
         }
       }
     }
   },
   "libraries": {
     "GaugesApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GaugesLib/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

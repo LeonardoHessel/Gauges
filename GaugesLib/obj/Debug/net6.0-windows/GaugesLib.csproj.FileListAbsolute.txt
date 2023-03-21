@@ -1,0 +1,17 @@
+C:\Projects\Gauges\GaugesLib\bin\Debug\net6.0-windows\GaugesLib.deps.json
+C:\Projects\Gauges\GaugesLib\bin\Debug\net6.0-windows\GaugesLib.dll
+C:\Projects\Gauges\GaugesLib\bin\Debug\net6.0-windows\GaugesLib.pdb
+C:\Projects\Gauges\GaugesLib\obj\Debug\net6.0-windows\GaugesLib.csproj.AssemblyReference.cache
+C:\Projects\Gauges\GaugesLib\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Projects\Gauges\GaugesLib\obj\Debug\net6.0-windows\GaugesLib_MarkupCompile.cache
+C:\Projects\Gauges\GaugesLib\obj\Debug\net6.0-windows\GaugesLib_MarkupCompile.lref
+C:\Projects\Gauges\GaugesLib\obj\Debug\net6.0-windows\Themes\Generic.baml
+C:\Projects\Gauges\GaugesLib\obj\Debug\net6.0-windows\GaugesLib.g.resources
+C:\Projects\Gauges\GaugesLib\obj\Debug\net6.0-windows\GaugesLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Gauges\GaugesLib\obj\Debug\net6.0-windows\GaugesLib.AssemblyInfoInputs.cache
+C:\Projects\Gauges\GaugesLib\obj\Debug\net6.0-windows\GaugesLib.AssemblyInfo.cs
+C:\Projects\Gauges\GaugesLib\obj\Debug\net6.0-windows\GaugesLib.csproj.CoreCompileInputs.cache
+C:\Projects\Gauges\GaugesLib\obj\Debug\net6.0-windows\GaugesLib.dll
+C:\Projects\Gauges\GaugesLib\obj\Debug\net6.0-windows\refint\GaugesLib.dll
+C:\Projects\Gauges\GaugesLib\obj\Debug\net6.0-windows\GaugesLib.pdb
+C:\Projects\Gauges\GaugesLib\obj\Debug\net6.0-windows\ref\GaugesLib.dll

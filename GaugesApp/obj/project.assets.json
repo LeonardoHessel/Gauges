@@ -1,11 +1,33 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows7.0": {
+      "GaugesLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/GaugesLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GaugesLib.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "GaugesLib/1.0.0": {
+      "type": "project",
+      "path": "../GaugesLib/GaugesLib.csproj",
+      "msbuildProject": "../GaugesLib/GaugesLib.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows7.0": [
+      "GaugesLib >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Leonardo\\.nuget\\packages\\": {}
@@ -33,7 +55,11 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Projects\\Gauges\\GaugesLib\\GaugesLib.csproj": {
+              "projectPath": "C:\\Projects\\Gauges\\GaugesLib\\GaugesLib.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
